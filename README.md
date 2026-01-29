@@ -108,3 +108,5 @@ Expenses should be stored like:
   amount: 3000,
   date: "2026-01-29"
 }
+### Objective of the project 
+The project will teach us more about the for and how we can track and also integrate our html so that it we can growth both critical thinking and also in problem-solving skills 
