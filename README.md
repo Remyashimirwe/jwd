@@ -1,112 +1,139 @@
-# 💰 Expense Tracker (Frontend → Backend Thinking)
+# 📘 JavaScript Strings and Loops Study Guide
 
-A practical beginner-friendly project that helps students build real-life programming logic while thinking like both a frontend and backend developer.
+This project contains examples and explanations of important JavaScript
+String methods and loop statements including while, do...while, and for
+loops with if conditions.
 
-This is not just a UI project — it teaches discipline, structure, and problem-solving.
+------------------------------------------------------------------------
 
----
+## 📌 String Methods Covered
 
-## 🎯 Project Goal
+### 🔤 Basic String Methods
 
-Create an **Expense Tracker** application where users can record their spending, calculate totals, track daily expenses, and receive warnings when they exceed a budget.
+  Method          Description
+  --------------- ---------------------------------------------
+  length          Returns number of characters
+  charAt()        Returns character at index
+  charCodeAt()    Returns UTF-16 character code
+  codePointAt()   Returns Unicode code point
+  at()            Returns character (supports negative index)
+  concat()        Combines strings
+  slice()         Extracts part of string
+  substring()     Extracts part of string
+  substr()        Extracts part (deprecated)
+  toUpperCase()   Converts to uppercase
+  toLowerCase()   Converts to lowercase
 
-This project is designed to train students to think logically, manage data properly, and write clean code.
+------------------------------------------------------------------------
 
----
+### ✂️ Whitespace Methods
 
-## ✅ Features to Build
+  Method        Description
+  ------------- --------------------------------
+  trim()        Removes spaces from both sides
+  trimStart()   Removes spaces from start
+  trimEnd()     Removes spaces from end
 
-Students must implement the following core features:
+------------------------------------------------------------------------
 
-### 1️⃣ Add Expenses
-Allow the user to add an expense with:
+### 📏 Padding & Repeating
 
-- Expense name (string)
-- Amount (number)
+  Method       Description
+  ------------ -------------------------------
+  padStart()   Pads beginning of string
+  padEnd()     Pads end of string
+  repeat()     Repeats string multiple times
 
-Example:
+------------------------------------------------------------------------
 
-- "Transport" → 5000
-- "Food" → 3000
+### 🔄 Replace & Split
 
----
+  Method         Description
+  -------------- ----------------------------
+  replace()      Replaces first match
+  replaceAll()   Replaces all matches
+  split()        Converts string into array
 
-### 2️⃣ Calculate Total Expenses
-The app should automatically calculate the sum of all expenses.
+------------------------------------------------------------------------
 
-Example:
+## 🔁 Loop Statements
 
-Total = 5000 + 3000 = 8000
+### 1️⃣ While Loop
 
----
+``` javascript
+let i = 1;
 
-### 3️⃣ Daily Spending Tracker
-Each expense must include a date.
-
-The app should show spending grouped by day:
-
-- Today’s total spending
-- Yesterday’s spending
-- Spending history
-
----
-
-### 4️⃣ Budget Warning System
-Students should allow the user to set a budget.
-
-If total expenses exceed the budget:
-
-⚠️ Display a warning message like:
-
-> "Budget exceeded! Reduce spending."
-
----
-
-### 5️⃣ Dark / Light Mode Toggle
-Students should add a theme switch:
-
-- Light mode ☀️
-- Dark mode 🌙
-
-This teaches UI control and state handling.
-
----
-
-## 🧠 What Students Learn From This Project
-
-This project forces students to practice key programming concepts:
-
-### 🔁 Loops
-- Iterating through expense lists
-- Summing totals
-- Filtering daily records
-
----
-
-### ➕ Math Logic
-- Adding amounts
-- Comparing expenses vs budget
-- Calculating daily totals
-
----
-
-### 🧩 Functions
-Students will create reusable functions like:
-
-- `addExpense()`
-- `calculateTotal()`
-- `checkBudget()`
-
----
-
-### 📦 Objects & Arrays
-Expenses should be stored like:
-
-```js
-{
-  name: "Food",
-  amount: 3000,
-  date: "2026-01-29"
+while (i <= 5) {
+  console.log(i);
+  i++;
 }
-### Objective of the project 
-The project will teach us more about the for and how we can track and also integrate our html so that it we can growth both critical thinking and also in problem-solving skills 
+```
+
+------------------------------------------------------------------------
+
+### 2️⃣ Do...While Loop
+
+``` javascript
+let i = 1;
+
+do {
+  console.log(i);
+  i++;
+} while (i <= 5);
+```
+
+------------------------------------------------------------------------
+
+### 3️⃣ For Loop with If Condition
+
+Example: Print even numbers from 1 to 10
+
+``` javascript
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+```
+
+------------------------------------------------------------------------
+
+## 🌍 Real-World Practice Problems
+
+-   Student grading system (Pass/Fail)
+-   Bank transaction filter (Deposit/Withdrawal)
+-   Password strength checker
+-   Shopping discount calculator
+-   Count vowels in a name
+-   Find largest number in array
+
+------------------------------------------------------------------------
+
+## 🎯 Purpose
+
+This project helps beginners:
+
+-   Understand JavaScript string manipulation
+-   Practice loops and conditions
+-   Build logical thinking with real-world problems
+
+------------------------------------------------------------------------
+
+## 🚀 How to Run
+
+1.  Install Node.js or use browser console.
+2.  Copy the examples into a `.js` file.
+3.  Run using:
+
+```{=html}
+<!-- -->
+```
+    node filename.js
+
+Or open browser → Right Click → Inspect → Console.
+
+------------------------------------------------------------------------
+
+## 📚 Author
+
+Study Practice Project -- JavaScript Fundamentals
