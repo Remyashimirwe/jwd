@@ -40,3 +40,26 @@ lakes [0] = "kivu"
 console.log(lakes)
 const marks = new Array(10,200,39438,6489);
 console.log(marks.length)
+/* nested objects */
+let x = "";
+const myobject = {
+    name: "Remy",
+    age: 15,
+    cars: [{name: "BMW", horsepower: [1500,1000,900]},
+        {name: "audi", horsepower: [2000,6000,8000]},
+        {name: "toyota", horsepower: [200,3000,100]}
+    ]
+}
+for (let i in myobject.cars){
+    x += "<h2>" + myobject.cars[i].name + "</h2>"
+    for(let j in myobject.cars[i].horsepower){
+        x += myobject.cars[i].horsepower[j] + "<br>";
+    }
+
+}
+document.getElementById("out").innerHTML = x;
+/* nested array */
+/*const places =[{name: "kigali", country: "rwanda"},
+    {name: "kampala", country: "uganda"}
+]
+console.log(myobject.name)*/
