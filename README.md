@@ -160,3 +160,23 @@ Display the first and last product.
 
 👉 Bonus: Convert the cart into a comma-separated string.
 
+### Student Score Analyzer
+const scores = [85, 92, 78, 90, 88];
+#### use foreach or loop
+Questions: 
+Find the highest score.
+			
+Find the lowest score.
+
+
+Calculate the average score.
+
+
+Check if score 90 exists in the array.
+
+
+Sort the scores from highest to lowest.
+
+
+👉 Bonus: Count how many students passed (pass mark = 80).
+
