@@ -63,3 +63,18 @@ document.getElementById("out").innerHTML = x;
     {name: "kampala", country: "uganda"}
 ]
 console.log(myobject.name)*/
+/* array methods */
+/* join()*/
+document.getElementById("join").innerHTML = names.join(" / ")
+/* shift() it removes element at the start of the array */
+/* unshift() it adds the element at the first side of the array */ 
+/* concat */
+//const animals = ["dogs", "cows", "hens", "pigs"]
+console.log(names.concat(marks))
+// array flat()
+const subjects = [[12,46],[78,673],[438,84378]]
+console.log(subjects.length)
+const child = subjects.flat()
+console.log(child)
+console.log(child.length)
+//array splice()

@@ -137,3 +137,26 @@ Or open browser → Right Click → Inspect → Console.
 ## 📚 Author
 
 Study Practice Project -- JavaScript Fundamentals
+
+### 🛒 1️⃣ Shopping Cart System
+You are building a small shopping cart for an online store.
+const cart = ["Laptop", "Mouse", "Keyboard", "Monitor"];
+
+Questions:
+Display all products in the cart using a loop.
+
+
+Add "Headphones" to the cart.
+
+
+Remove the last item.
+
+
+Show how many products are in the cart.
+
+
+Display the first and last product.
+
+
+👉 Bonus: Convert the cart into a comma-separated string.
+
