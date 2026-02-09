@@ -1,6 +1,7 @@
 const scores = [85,92,78,90,88]
 const output = document.getElementById("output")
 const high = document.getElementById("highest")
+const low = document.getElementById("lowest")
 // first method
 text = "<ul>"
 for(let i=0; i< scores.length; i++){
@@ -30,6 +31,6 @@ for(let i=0; i< scores.length; i++ ){
         lowest = scores[i]
     }
 }
-lowest.innerHTML = lowest
+low.innerHTML = lowest
 console .log(lowest)
 
