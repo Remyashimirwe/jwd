@@ -2,6 +2,7 @@ const scores = [85,92,78,90,88]
 const output = document.getElementById("output")
 const high = document.getElementById("highest")
 const low = document.getElementById("lowest")
+const descend = document.getElementById("descending")
 // first method
 text = "<ul>"
 for(let i=0; i< scores.length; i++){
@@ -33,4 +34,11 @@ for(let i=0; i< scores.length; i++ ){
 }
 low.innerHTML = lowest
 console .log(lowest)
+//sorting
+let score= [85,92,78,90,88]
+score.sort()
+score.reverse()
+console.log(score)
+descend.innerHTML = score
+console.log(score)
 
