@@ -78,3 +78,10 @@ const child = subjects.flat()
 console.log(child)
 console.log(child.length)
 //array splice()
+//sorting  
+//sort () arrange based on alphabetically
+const names =["Mugisha", "emmy", "kevin", "Abayo"]
+console.log(names.sort())
+//reverse() areanginge based on the element
+
+

@@ -179,4 +179,77 @@ Sort the scores from highest to lowest.
 
 
 👉 Bonus: Count how many students passed (pass mark = 80).
+### Online Store Basket
+const basket = ["Phone", "Charger", "Case", "Power Bank"];
+
+Tasks:
+
+Print each item using a for loop.
+
+Insert "Earphones" into the basket.
+
+Delete the first item.
+
+Display the number of items.
+
+Show the middle item.
+
+Arrange items A → Z.
+
+Arrange items Z → A.
+
+Check if "Charger" is present.
+
+Get the position of "Case".
+
+Convert the basket into a single string using ", "
+### Employee Management (Mixed Data Types)
+```js 
+const employees = [
+  { name: "Watch" price: 500 },
+  { name: "Jane", salary: 700 },
+  { name: "Mike", salary: 600 }
+]; 
+```
+
+Questions:
+Loop and display employee names.
+
+
+Find the employee with the highest salary.
+
+
+Increase everyone's salary by 100.
+
+
+Calculate total salary expense.
+
+
+Add a new employee object.
+
+# REAL LIFE PROJECTS 
+You are working for a retail electronics store. The store sells items like laptops, keyboards, monitors, and accessories. You have been tasked with managing the product inventory for the store. This includes tracking stock quantities, prices, and total inventory value.
+
+Data Challenge:
+
+Each product has a name, price, and quantity in stock.
+
+Some products may be added or removed over time.
+
+The store manager wants to know which products are most expensive, which have the highest stock, and the total inventory value for financial reporting.
+
+Tasks/Questions:
+
+Display all product names to get a quick overview of what’s in the store.
+
+Find the product with the highest price to identify premium items.
+
+Increase the quantity of every product (e.g., after a new shipment arrives).
+
+Calculate total inventory value (price × quantity) to understand the store’s total asset value.
+
+Add a new product to the inventory when the store acquires new items.
+
+Sort products by quantity from highest to lowest to prioritize restocking or sales.
+
 
