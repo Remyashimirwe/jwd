@@ -51,9 +51,9 @@ const myobject = {
     ]
 }
 for (let i in myobject.cars){
-    x += "<h2>" + myobject.cars[i].name + "</h2>"
+    x += "<tr>" + myobject.cars[i].name + "</tr>"
     for(let j in myobject.cars[i].horsepower){
-        x += myobject.cars[i].horsepower[j] + "<br>";
+        x += "<td>"+ myobject.cars[i].horsepower[j] + "</td>";
     }
 
 }
