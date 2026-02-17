@@ -52,5 +52,10 @@ map.set(true,"boolean key")
 for(let [key] of map){
     console.log(key)
 }
+const num  = new Set();
+for (let i=1; i<=100; i++){
+    num.add(i);
+}
+console.log(num)
 
 

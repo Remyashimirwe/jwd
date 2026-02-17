@@ -230,4 +230,49 @@ wm.get(user);
 
 ------------------------------------------------------------------------
 
-Happy Coding 🚀
+# Exercise 1 — Unique Emails
+
+You receive a list of emails from a signup form.
+
+## Remove duplicates.
+
+const emails = [
+  "remy@gmail.com",
+  "john@gmail.com",
+  "remy@gmail.com",
+  "anna@gmail.com",
+  "john@gmail.com"
+];
+
+
+## Expected:
+
+["remy@gmail.com","john@gmail.com","anna@gmail.com"]
+
+## Exercise 2 — Check Duplicate Names
+
+Return true if array contains duplicates.
+
+const names = ["Remy","Anna","John","Remy"];
+
+## Exercise 3 — Unique Random Numbers
+
+Generate 20 random numbers (1–50)
+Store only unique numbers using Set.
+
+## Exercise 4 — Remove vowels using Set
+
+Remove vowels from string:
+
+"javascript is amazing"
+
+
+## Hint:
+
+vowels = new Set(['a','e','i','o','u'])
+
+## Exercise 5 — Find Unique Characters
+
+Count how many unique letters exist in:
+
+"programming"
