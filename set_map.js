@@ -44,5 +44,13 @@ ws.add(user)
 console.log(ws.has(user))
 console.log(ws)
 //continue with the map
+const map = new Map();
+map.set("name", "remy")
+map.set(1,"kamana")
+map.set(true,"boolean key")
+// looping in map
+for(let [key] of map){
+    console.log(key)
+}
 
 
