@@ -253,3 +253,6 @@ Add a new product to the inventory when the store acquires new items.
 Sort products by quantity from highest to lowest to prioritize restocking or sales.
 
 
+
+
+
