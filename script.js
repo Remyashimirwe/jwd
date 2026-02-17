@@ -41,4 +41,14 @@ score.reverse()
 console.log(score)
 descend.innerHTML = score
 console.log(score)
+let basket = ["phone","charger","case","power bank"]
+for (let i=0; i<basket.length;i++)
+    console.log(basket)
 
+console.push("headphones")
+console.log(basket)
+for(let i=0; i <basket.length; i++){
+if(basket[i] == "charger"){
+    console.log("true")
+}
+}
