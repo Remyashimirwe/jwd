@@ -58,4 +58,9 @@ for (let i=1; i<=100; i++){
 }
 console.log(num)
 
-
+//set 
+const set1 = new Set([1,2,3,4,5]);
+//map
+const map1 = new Map();
+// array
+const aa = [1,2,3,4,5];
