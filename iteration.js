@@ -68,3 +68,27 @@ for (const key of students.values()){
     console.log(key)
 }
 
+/// count times
+console.log("--------counting")
+count = 0
+const words = "my academic education"
+for(const word of words){
+    if(word == "a"){
+        console.log(word)
+    }
+}
+//console.log(count)
+
+const nums = [2, 4, 6, 8, 10];
+for (let num of nums){
+    console.log(num * 3)
+}
+console.log("mixed")
+const mixed = [1, 2, 5, 8, 11, 14];
+even = []
+for(let mix of mixed){
+    if(mix % 2 == 0){
+        even.push(mix)
+    }
+}
+console.log(even)
