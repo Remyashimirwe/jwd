@@ -40,3 +40,18 @@ const regex = /^Hello/;
 const text3 = "Hello world\nHello again";
 
 console.log(regex.test(text3)); 
+// regex meta characters 
+// \d matches digit
+// \D matches non-digit 
+// \w matches word
+// \W matches non-word
+// \s matches any space 
+// \xhh matches hexadecimal 
+const food = ["mango199%!", "orange", "banana12",
+     "welcome to the javascript course",
+      "today it will rain so remembe the umbrella"]
+for(let i=0; i<food.length; i++){
+    const pattern = /\x6F/g
+    let result = food[i].match(pattern)
+    console.log(result)
+}
