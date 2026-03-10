@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f5efe6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: sans-serif;
+      }
+      .container {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        overflow: hidden;
+      }
+      .screen {
+        display: none;
+        padding: 2rem;
+        text-align: center;
+      }
+      .screen.active {
+        display: block;
+      }
+      #start-screen h1 {
+        color: #e86a33;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+      }
+      #start-screen p {
+        color: #666;
+        margin-bottom: 30px;
+      }
+      .quiz-header {
+        margin-bottom: 1rem;
+      }
+      #question-text {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .quiz-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .answers-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 25px;
+      }
+      .answer-btn {
+        background: orange;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 1rem;
+        cursor: pointer;
+        text-align: left;
+      }
+      .answer-btn:hover {
+        background: #eadbc8;
+      }
+      .answer-btn.correct {
+        background: #e6fff0;
+        border-color: #a3f0c4;
+        color: #28a745;
+      }
+      .answer-btn.incorrect {
+        background: #fff0f0;
+        border-color: #ffbdbd;
+        color: #dc3545;
+      }
+      .progress-bar {
+        height: 10px;
+        background: #f8f0e5;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 20px;
+      }
+      .progress {
+        height: 100%;
+        background: #e86a33;
+        width: 0%;
+      }
+      button {
+        background: #e86a33;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #d45b28;
+      }
+      .dark-theme {
+        background: #333;
+      }
+      .dark-theme .container {
+        background: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="screen active" id="start-screen">
+        <button onclick="themeChange()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-moon-icon lucide-moon"
+          >
+            <path
+              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+            />
+          </svg>
+        </button>
+        <h1>Quiz Time!</h1>
+        <p>Test your knowledge with these fun questions</p>
+        <button onclick="startQuiz()">Start Quiz</button>
+      </div>
+      <div class="screen" id="quiz-screen">
+        <div class="quiz-header">
+          <h2 id="question-text"></h2>
+          <div class="quiz-info">
+            <p>
+              Question <span id="current-question">1</span> of
+              <span id="total-questions">5</span>
+            </p>
+            <p>Score: <span id="score">0</span></p>
+          </div>
+        </div>
+        <div id="answers-container" class="answers-container"></div>
+        <div class="progress-bar">
+          <div id="progress" class="progress"></div>
+        </div>
+      </div>
+      <div id="result-screen" class="screen">
+        <h1>Quiz Results</h1>
+        <p>
+          You scored <span id="final-score">0</span> out of
+          <span id="max-score">5</span>
+        </p>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+      </div>
+    </div>
+    <script>
+      let theme = "light";
+      const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+      const moon = `<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-moon-icon lucide-moon"
+        >
+          <path
+            d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+          />
+        </svg>`;
+      function themeChange() {
+        switch (theme) {
+          case "light":
+            document.body.classList.add("dark-theme");
+            document.getElementById("icon").innerHTML = sun;
+            theme = "dark";
+            break;
+          case "dark":
+            document.body.classList.remove("dark-theme");
+            document.getElementById("icon").innerHTML = moon;
+            theme = "light";
+            break;
+        }
+      }
+      const questions = [
+        {
+          question:
+            "how many peoople killed in genocide against tutsi in 1994?",
+          answers: [
+            { text: "over 1 million of people", correct: true },
+            { text: "no one killed", correct: false },
+            { text: "under 1 million of people", correct: false },
+            { text: "none collect answer", correct: false },
+          ],
+        },
+        {
+          question: "who is the first president of rwanda?",
+          answers: [
+            { text: "H.E gergory kayibanda", correct: false },
+            { text: "H.E habyarimana kayibanda", correct: true },
+            { text: "H.E mbonyumutwa dominique", correct: false },
+            { text: "H.E pastor bizimungu", correct: false },
+          ],
+        },
+        {
+          question: "in which year genocide against tutsi taking in action?",
+          answers: [
+            { text: "1994", correct: true },
+            { text: "1962", correct: false },
+            { text: "2000", correct: false },
+            { text: "1954", correct: false },
+          ],
+        },
+        {
+          question: "which date in rwanda is being independent day?",
+          answers: [
+            { text: "4/7", correct: true },
+            { text: "1/2", correct: false },
+            { text: "7/4", correct: false },
+            { text: "2/8", correct: false },
+          ],
+        },
+        {
+          question: "how many distirict we have in rwanda?",
+          answers: [
+            { text: "thirty", correct: true },
+            { text: "fifty", correct: false },
+            { text: "twenty", correct: false },
+            { text: "ten", correct: false },
+          ],
+        },
+      ];
+      let currentQuestionIndex = 0;
+      let score = 0;
+      const startScreen = document.getElementById("start-screen");
+      const quizScreen = document.getElementById("quiz-screen");
+      const resultScreen = document.getElementById("result-screen");
+      const questionText = document.getElementById("question-text");
+      const answersContainer = document.getElementById("answers-container");
+      const currentQuestion = document.getElementById("current-question");
+      const totalQuestions = document.getElementById("total-questions");
+      const scoreDisplay = document.getElementById("score");
+      const finalScore = document.getElementById("final-score");
+      const progress = document.getElementById("progress");
+      totalQuestions.innerText = questions.length;
+      function startQuiz() {
+        startScreen.classList.remove("active");
+        quizScreen.classList.add("active");
+        currentQuestionIndex = 0;
+        score = 0;
+        showQuestion();
+      }
+      function showQuestion() {
+        let q = questions[currentQuestionIndex];
+        questionText.innerText = q.question;
+        currentQuestion.innerText = currentQuestionIndex + 1;
+        answersContainer.innerHTML = "";
+        q.answers.forEach((answer) => {
+          let button = document.createElement("button");
+          button.innerText = answer.text;
+          button.classList.add("answer-btn");
+          button.onclick = () => selectAnswer(button, answer.correct);
+          answersContainer.appendChild(button);
+        });
+        updateProgress();
+      }
+      function selectAnswer(button, correct) {
+        if (correct) {
+          button.classList.add("correct");
+          score++;
+        } else {
+          button.classList.add("incorrect");
+        }
+        scoreDisplay.innerText = score;
+        setTimeout(() => {
+          currentQuestionIndex++;
+          if (currentQuestionIndex < questions.length) {
+            showQuestion();
+          } else {
+            showResults();
+          }
+        }, 1000);
+      }
+      function updateProgress() {
+        let percent = (currentQuestionIndex / questions.length) * 100;
+        progress.style.width = percent + "%";
+      }
+      function showResults() {
+        quizScreen.classList.remove("active");
+        resultScreen.classList.add("active");
+        finalScore.innerText = score;
+        document.getElementById("max-score").innerText = questions.length;
+      }
+      function restartQuiz() {
+        resultScreen.classList.remove("active");
+        startScreen.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

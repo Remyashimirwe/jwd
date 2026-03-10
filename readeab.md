@@ -132,7 +132,7 @@ let name = "John;
 ### **Exercise 18**
 Correct the code:
 ```js
-if (x > 5 {
+if (x > 5 ){
   console.log("OK");
 }
 ```
