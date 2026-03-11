@@ -52,15 +52,18 @@ map.set(true,"boolean key")
 for(let [key] of map){
     console.log(key)
 }
-const num  = new Set();
-for (let i=1; i<=100; i++){
-    num.add(i);
-}
-console.log(num)
+const emails=["mana@gmail.com","mana@gmail.com","money@gmail.com","mini@gmail.com",
+    "money@gmail.com"]
+    const uniqu = [... new Set(emails)]
+    console.log(emails)
+    console.log(uniqu)
 
-//set 
-const set1 = new Set([1,2,3,4,5]);
-//map
-const map1 = new Map();
-// array
-const aa = [1,2,3,4,5];
+
+const arra=["remy","anna","anna","remy"]
+const uniq=[... new Set(arra)]
+console.log(arra)
+console.log(uniq)
+if (arra.has["remy"]) {
+    console.log("true")
+}
+
