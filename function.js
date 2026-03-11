@@ -1,10 +1,5 @@
-function greeting(){
-    return "Hello, welcome";
+function calculateFare(distance, rate= 300){
+    return distance * rate;
 }
-function add(a, b){
-    return (a + b);
-}
-a = parseInt(prompt("enter number"));
-b = parseInt(prompt("enter number b"));
-result = add(a,b);
+result = calculateFare(12);
 console.log(result);
