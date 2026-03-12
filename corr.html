@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxi Fare Calculator</title>
+  </head>
+  <body>
+    <input id="distance" placeholder="Distance" />
+    <input id="rate" placeholder="Rate" />
+    <button
+      onclick="
+        const distance = document.getElementById('distance').value;
+        const rate = document.getElementById('rate').value;
+        calculateFare(distance, rate);
+      "
+    >
+      Cal
+    </button>
+    <h2>Supermarket Discount</h2>
+    <input type="text" placeholder="price" id="price">
+    <button onclick="applyDiscount()">discount</button>
+    <script src="corr.js"></script>
+  </body>
+</html>
