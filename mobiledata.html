@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Data Bundle</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="gb" id="gb">
+        <input type="text" placeholder="pricePerGb" id="pricePerGb">
+        <button onclick="
+        const gb = parseInt(document.getElementById('gb').value);
+        const pricePerGb = parseInt(document.getElementById('pricePerGb').value);
+        const add = (gb, pricePerGb) =>{
+            console.log(gb +pricePerGb)
+        }
+        add(gb, pricePerGb)
+        ">ok</button>
+    </div>
+    <div class="momo">
+        <input type="text" placeholder="total" id="total">
+        <input type="text" placeholder="people" id="people">
+        <button onclick="
+        const total=parseInt(document.getElementById('total').value);
+        const people=parseInt(document.getElementById('people').value);
+        splitBill(total,people)">yes</button>
+    </div>
+    <script src="mobiledata.js"></script>
+</body>
+</html>

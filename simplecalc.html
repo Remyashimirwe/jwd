@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calc</title>
+</head>
+<body>
+    <input id="a" placeholder="enter a">
+    <input id="b" placeholder="enter b">
+    <input  type="text" id="operator" placeholder="enter operator">
+    <button onclick="
+    const a = parseInt(document.getElementById('a').value);
+    const b  = parseInt(document.getElementById('b').value);
+    const operator = document.getElementById('operator').value;
+    // calculate(a, b, operator)
+    mult(a,b,operator)
+    ">calculate</button>
+    <script src="simplecalc.js"></script>
+</body>
+</html>
