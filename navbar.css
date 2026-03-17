@@ -1,0 +1,31 @@
+*{
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 4px;
+}
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+h2{
+    font-size: 12px;
+    padding: 2px;
+}
+button{
+    justify-content: end;
+    display: flex;
+    background-color: aqua;
+    border-radius: 4PX;
+    border: 1px solid black;
+}

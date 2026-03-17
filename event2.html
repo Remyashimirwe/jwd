@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onafterprint</title>
+  </head>
+  <body onresize="console.log('resized')">
+    <h1>Welcome to my website</h1>
+    <p id="db" ondblclick="double()">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut eum beatae,
+      delectus ducimus commodi ea voluptates ratione quisquam minima quae facere
+      cumque iste earum illum nam odio esse impedit quasi.
+    </p>
+    <p id="output"></p>
+    <form onreset="alert('reseting the page')">
+        <input type="text" placeholder="username" onfocus="this.style.background = 'blue'" onblur="this.style.background = 'white'">
+        <input type="password" placeholder="password" onchange="alert('you changed something')">
+        <input type="text" oninput="check()" onselect="alert('you selected')">
+        <button type="reset">Reset</button>
+        <button ondblclick="double()">double click</button>
+        <input type="search" onsearch="alert('searching...')">
+
+    </form>
+    <script>
+        function myfuction(){
+            console.log("the website is closed")
+        }
+        function check(){
+            document.getElementById("output").innerHTML = "typing...."
+        }
+        function double(){
+            document.getElementById("db").style.backgroundColor = "blue"
+        }
+    </script>
+  </body>
+</html>
