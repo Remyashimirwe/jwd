@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .box {
+      padding: 20px;
+      border: 2px solid #333;
+      width: 300px;
+      background: #f7f7f7;
+    }
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Keyboard Event Detector</h2>
+<p>Press any key to see the details.</p>
+
+<div class="box">
+  <p><strong>Key Pressed:</strong> <span id="key">-</span></p>
+  <p><strong>Key Code:</strong> <span id="code">-</span></p>
+  <p><strong>Shift:</strong> <span id="shift">-</span></p>
+  <p><strong>Ctrl:</strong> <span id="ctrl">-</span></p>
+  <p><strong>Alt:</strong> <span id="alt">-</span></p>
+</div>
+
+<script>
+document.addEventListener("keydown", (event) => {
+  document.getElementById("key").innerText = event.key;
+  document.getElementById("code").innerText = event.code;
+
+  document.getElementById("shift").innerText = event.shiftKey ? "Yes" : "No";
+  document.getElementById("ctrl").innerText = event.ctrlKey ? "Yes" : "No";
+  document.getElementById("alt").innerText = event.altKey ? "Yes" : "No";
+});
+</script>
+
+</body>
+</html>

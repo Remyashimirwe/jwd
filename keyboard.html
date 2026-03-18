@@ -1,0 +1,39 @@
+<!--keydown-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keydown</title>
+    <style>
+      .bold {
+        font-weight: 600;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <input placeholder="Enter your name" id="data" />
+    <p id="output"></p>
+    <script>
+      document.getElementById("data").addEventListener("keydown", (event) => {
+        const text = document.getElementById("data");
+        const output = document.getElementById("output");
+        const data = text.value;
+       // if (event.ctrlKey) {
+         // alert("you pressed the contolkey");
+        //}
+        //if (event.altKey) {
+          //output.style.background = "blue";
+        //}
+        if (event.ctrlKey && event.shiftKey || event.key == "s") {
+          alert("this");
+          
+          text.value = data.toUpperCase();
+          document.getElementById("output").innerText = data.toUpperCase();
+          
+        }
+      });
+    </script>
+  </body>
+</html>
