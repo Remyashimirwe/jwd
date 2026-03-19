@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/box.css" />
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      const box = document.getElementById("box");
+
+      // Starting position
+      let x = 0;
+      let y = 0;
+      const step = 10; // speed of the arrow press 
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowUp") {
+          y -= step;
+        } else if (e.key === "ArrowDown") {
+          y += step;
+        } else if (e.key === "ArrowLeft") {
+          x -= step;
+        } else if (e.key === "ArrowRight") {
+          x += step;
+        }
+
+        box.style.top = y + "px";
+        box.style.left = x + "px";
+      });
+    </script>
+  </body>
+</html>
