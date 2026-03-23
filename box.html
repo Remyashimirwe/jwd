@@ -17,6 +17,7 @@
       const step = 10; // speed of the arrow press 
 
       document.addEventListener("keydown", (e) => {
+        console.log(e.key)
         if (e.key === "ArrowUp") {
           y -= step;
         } else if (e.key === "ArrowDown") {

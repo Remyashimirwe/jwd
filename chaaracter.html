@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #character {
+        width: 80px;
+        height: 80px;
+        background-color: aqua;
+        position: absolute;
+        bottom: 50px;
+        left: 100px;
+        transition: all 0.2s ease;
+      } 
+      .jump {
+        transform: translateY(-130px);
+      }
+
+      .crouch {
+        height: 50px;
+        background: darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div draggable="true">Drag me</div>
+    <div id="character"></div>
+    <script>
+      const character = document.getElementById("character");
+
+      document.addEventListener("keydown", function (e) {
+        if (e.code === "Space") {
+          character.classList.add("jump");
+        }
+
+        if (e.code === "ShiftLeft" || e.code === "ShiftRight") {
+          character.classList.add("crouch");
+        }
+      });
+
+      document.addEventListener("keyup", function (e) {
+        if (e.code === "Space") {
+          character.classList.remove("jump");
+        }
+
+        if (e.code === "ShiftLeft" || e.code === "ShiftRight") {
+          character.classList.remove("crouch");
+        }
+      });
+    </script>
+  </body>
+</html>
