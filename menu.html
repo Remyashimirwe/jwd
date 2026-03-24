@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --fg: #e2e8f0;
+        --accent: #38bdf8;
+        --shadow: 0 10px 20px rgba(2, 6, 23, 0.35);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        background: #0b1120;
+        color: var(--bg);
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #e2e8f0;
+        padding: 16px 20px;
+        background: var(--bg);
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+      .logo {
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--fg);
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+      .nav-links a:hover {
+        border-color: rgba(226, 232, 240, 0.3);
+        color: var(--accent);
+      }
+      .menu {
+        display: none;
+        cursor: pointer;
+        color: var(--fg);
+        padding: 6px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .menu:hover {
+        border-color: rgba(226, 232, 240, 0.3);
+        color: var(--accent);
+      }
+      @media (max-width: 568px) {
+        .menu {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          background: #0f172a;
+          padding: 16px 20px;
+          gap: 14px;
+          transform: translateY(-10px);
+          opacity: 0;
+          pointer-events: none;
+          transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
+        }
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <nav class="navbar">
+        <div class="logo">Future</div>
+        <div class="menu" id="menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-menu-icon lucide-menu"
+          >
+            <path d="M4 5h16" />
+            <path d="M4 12h16" />
+            <path d="M4 19h16" />
+          </svg>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/audio.html">Audio</a></li>
+          <li><a href="/box.html">Box</a></li>
+          <li><a href="/dectruction.html">Dectruction</a></li>
+        </ul>
+      </nav>
+      <script>
+        const navLinks = document.getElementById("nav-links");
+        const menu = document.getElementById("menu");
+        menu.addEventListener("click", () => {
+          menu.classList.toggle("active");
+          navLinks.classList.toggle("active");
+        });
+      </script>
+    </body>
+  </body>
+</html>
