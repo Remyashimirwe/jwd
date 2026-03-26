@@ -6,8 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-<audio preload="metadata">
+<audio controls id="1">
     <source src="/assets/Pop Smoke - Mood Swings (Official) ft. Lil Tjay - POPSMOKEVEVO.mp3" type="audio/mpeg">
 </audio>
+<audio controls id="2">
+    <source src="/assets/DaBaby - ROCKSTAR (Live From The BET Awards2020) ft. Roddy Ricch.mp3" type="audio/mpeg">
+</audio>
+<audio controls id="3">
+    <source src="/assets/Polo G - Barely Holdin' On (Official Video).mp3" type="audio/mpeg">
+</audio>
+<script>
+    document.addEventListener("keydown", (e)=>{
+        if(e.key === "a"){
+            console.log("clicked")
+            document.getElementById("1").play()
+        }
+        if(e.key === "s"){
+            console.log("clicked")
+            document.getElementById("2").play()
+        }
+        if(e.key === "d"){
+            console.log("clicked")
+            document.getElementById("3").play()
+        }
+    })
+</script>
 </body>
 </html>

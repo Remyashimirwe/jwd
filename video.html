@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dropZone{
+            width: 400px;
+            height: 250px;
+            border: 3px dashed gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: gray;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        video{
+            width: 400px;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="dropZone"
+        ondragover="event.preventDefault()"
+        ondragenter="highlight(event)"
+        ondragleave="unhighlight(event)"
+        ondrop="handleDrop(event)"
+    >
+        Drag & drop here
+    </div>
+
+    <video controls id="videoPlayer"></video>
+
+    <script>
+        function highlight(event){
+            event.currentTarget.style.background = "#e0f7ff";
+        }
+
+        function unhighlight(event){
+            event.currentTarget.style.background = "";
+        }
+
+        function handleDrop(event){
+            event.preventDefault();
+
+            const dropZone = event.currentTarget;
+            dropZone.style.background = "";
+            if (!event.dataTransfer || event.dataTransfer.files.length === 0) {
+                alert("No file detected.");
+                return;
+            }
+
+            const file = event.dataTransfer.files[0];
+
+            if (!file.type.startsWith("video/")) {
+                alert("Please drop a valid video file.");
+                return;
+            }
+
+            const videoURL = URL.createObjectURL(file);
+            const videoPlayer = document.getElementById("videoPlayer");
+
+            videoPlayer.src = videoURL;
+            videoPlayer.style.display = "block";
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>
